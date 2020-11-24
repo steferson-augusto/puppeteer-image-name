@@ -3,9 +3,25 @@
   <br>
   EXTRATOR DE NOME DE IMAGENS
 </h1>
-<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/steferson-augusto/puppeteer-image-name"/>
+<p>
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/steferson-augusto/puppeteer-image-name"/>
 
-<img alt="GitHub" src="https://img.shields.io/github/license/steferson-augusto/puppeteer-image-name">
+  <img alt="GitHub" src="https://img.shields.io/github/license/steferson-augusto/puppeteer-image-name"/>
+</p>
+
+<h4 align="center">
+  <a href="#usecase" >
+    Caso de Uso
+  </a>
+  |
+  <a href="#technology" >
+    Tecnologias
+  </a>
+  |
+  <a href="#license" >
+    Licença
+  </a>
+</h4>
 
 <p align="center">
   <img src="./github/printscreen.png" alt="Printscreen" width="640" >
@@ -15,8 +31,9 @@
     <img alt="Abrir demonstração" src="./github/button_demo.png">
   </a>
 </p>
+
 <br/>
-<h2>💡 Caso de Uso</h2>
+<h2 name="usecase">💡 Caso de Uso</h2>
 <p>
   A plataforma <a href="https://picsize.com.br/" target="_blank">Picsize</a> gera uma galeria de imagens, sendo upadas pelo próprio usuário ou selecionadas por outro. Para pessoas que usam softwares como o Adobe Lightroom e querem editar apenas as imagens selecionadas pelo cliente é necessário usar um texto contendo o nome de cada imagem separados por vírgula e sem a extensão.
 </p>
@@ -27,7 +44,8 @@
   <img src="./github/using.gif" alt="Animação" width="640" >
 </p>
 
-<h2>🚀 Tecnologias</h2>
+<br/>
+<h2 name="technology">🚀 Tecnologias</h2>
 <ul>
   <li>
     <a href="https://pt-br.reactjs.org/" target="_blank">React JS</a>
@@ -62,7 +80,8 @@
   </li>
 </ul>
 
-<h2>📝 Licença</h2>
+<br/>
+<h2 name="license">📝 Licença</h2>
 <p>Este projeto está sob uma licença MIT. Veja mais informações em <a href="https://github.com/steferson-augusto/puppeteer-image-name/blob/main/LICENSE" target="_blank">LICENSE</a>.</p>
 
 ---
