@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { NextApiRequest, NextApiResponse } from 'next'
 import puppeteer from 'puppeteer'
+import chrome from 'chrome-aws-lambda' // usar em produção
 
 export default async function (
   request: NextApiRequest,
@@ -9,7 +10,12 @@ export default async function (
   switch (request.method) {
     case 'POST': {
       const { destiny } = request.body
-      const browser = await puppeteer.launch()
+      const browser = await puppeteer.launch({
+        // usar parâmetros apenas em produção
+        args: chrome.args,
+        executablePath:
+          (await chrome.executablePath) || '/usr/bin/chromium-browser'
+      })
       const page = await browser.newPage()
       await page.goto(destiny, { waitUntil: 'networkidle0' })
 
