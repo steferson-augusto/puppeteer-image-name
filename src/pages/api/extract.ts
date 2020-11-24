@@ -15,7 +15,7 @@ export default async function (
 
       const list = await page.evaluate(() => {
         const nodes = document.querySelectorAll('section span')
-        const nodesArray = [...nodes]
+        const nodesArray = Array.from(nodes)
         const list = nodesArray.slice(2).map(item => item.textContent)
 
         return list
