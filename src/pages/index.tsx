@@ -66,7 +66,7 @@ const Home: React.FC = () => {
   return (
     <div>
       <Head>
-        <title>Home</title>
+        <title>Extractor</title>
       </Head>
 
       <main>
