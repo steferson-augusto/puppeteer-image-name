@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
       const destiny = ref.current.value
       const { data } = await axios.post('/api/extract', { destiny })
-      console.log(data)
+
       setValue(data)
       if (data === '') {
         toast.error('😕 Não encontramos nenhum registro.', {
