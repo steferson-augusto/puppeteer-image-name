@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { NextApiRequest, NextApiResponse } from 'next'
 import puppeteer from 'puppeteer'
-import chrome from 'chrome-aws-lambda' // usar em produção
+// import chrome from 'chrome-aws-lambda' // usar em produção
 
 export default async function (
   request: NextApiRequest,
@@ -12,13 +12,23 @@ export default async function (
       const { destiny } = request.body
       const browser = await puppeteer.launch({
         // usar parâmetros apenas em produção
-        args: chrome.args,
-        executablePath:
-          (await chrome.executablePath) || '/usr/bin/chromium-browser'
+        // args: chrome.args,
+        // executablePath:
+        //   (await chrome.executablePath) || '/usr/bin/chromium-browser'
       })
       const page = await browser.newPage()
-      await page.goto(destiny, { waitUntil: 'networkidle0' })
-
+      try {
+        await page.goto(destiny, {
+          waitUntil: [
+            'load',
+            'domcontentloaded',
+            'networkidle0',
+            'networkidle2'
+          ]
+        })
+      } catch (error) {
+        console.log(error)
+      }
       const list = await page.evaluate(() => {
         const nodes = document.querySelectorAll('section span')
         const nodesArray = Array.from(nodes)
