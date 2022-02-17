@@ -11,7 +11,7 @@
     "axios": "^0.21.0",
     "chrome-aws-lambda": "^5.5.0",
     "lottie-web": "^5.7.4",
-    "next": "10.0.1",
+    "next": "12.1.0",
     "polished": "^4.0.4",
     "puppeteer": "^5.5.0",
     "react": "17.0.1",
